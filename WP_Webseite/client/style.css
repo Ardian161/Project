@@ -1,68 +1,86 @@
-/* Grundlegendes Layout */
+/* Grundlegendes Layout für die ganze Seite */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
 }
 
-/* Container für den gesamten Chat */
+/* Container für das Chat-Fenster */
 #chatContainer {
-    width: 350px;
+    width: 800px;
     height: 500px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-/* Bereich, in dem die Nachrichten angezeigt werden */
+/* Das Chat-Fenster, in dem die Nachrichten angezeigt werden */
 #chatWindow {
-    flex: 1;
-    overflow-y: scroll;
+    flex-grow: 1;
     padding: 10px;
-    border-bottom: 2px solid #ddd;
-    font-size: 14px;
+    overflow-y: auto; 
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Hier ändern: Nachrichten nach rechts ausrichten */
 }
 
-/* Eingabebereich (nachricht eingeben) */
+
+/* Stil für alle Nachrichten */
+#chatWindow div {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 70%;
+    word-wrap: break-word;
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: rgb(145, 190, 241);
+}
+
+/* Nachrichten von anderen nach links ausrichten */
+#chatWindow .other {
+    background-color: #3f85e0;  /* Hellerer Hintergrund für Nachrichten von anderen */
+    align-self: flex-start;      /* Nachricht nach links verschieben */
+    text-align: left;            /* Text nach links ausrichten */
+}
+
+#chatWindow .self { 
+    background-color: black;
+}
+
+/* Container für das Eingabefeld und den Button */
 #inputContainer {
     display: flex;
     padding: 10px;
-    border-top: 2px solid #ddd;
+    background-color: #fafafa;
 }
 
+/* Eingabefeld für Nachrichten */
 #messageInput {
-    flex: 1;
-    padding: 8px;
+    flex-grow: 1;
+    padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
+    border-radius: 5px;
     margin-right: 10px;
 }
 
+/* Button zum Senden der Nachricht */
 #sendMessageButton {
-    padding: 8px 12px;
+    padding: 10px 15px;
     border: none;
-    background-color: #4CAF50;
+    background-color: #3f66bb;
     color: white;
-    font-size: 14px;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
+/* Stil für den Hover-Effekt des Buttons */
 #sendMessageButton:hover {
-    background-color: #45a049;
-}
-
-p {
-    margin: 5px 0;
-    padding: 5px;
-    background-color: #f1f1f1;
-    border-radius: 5px;
+    background-color: #283096;
 }

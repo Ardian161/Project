@@ -15,7 +15,7 @@ const wss = new WebSocket.Server({ server }); // WebSocket-Server auf demselben 
 
 wss.on('connection', (ws) => {
     console.log('Ein Client hat sich verbunden.');
-    ws.send('Hallo, ich bin ein neuer Client!');
+    ws.send(JSON.stringify({ name: "Server", text: "Hallo, ich bin ein neuer Client!" }));
 
     ws.on('message', (message) => {
         try {
