@@ -3,13 +3,23 @@ const socket = new WebSocket('ws://localhost:30000');
 // Globale Variable für den Client-Namen
 let clientName = "";
 
-// Verbindung geöffnet
+// Wenn die WebSocket-Verbindung geöffnet wird
 socket.addEventListener('open', () => {
     console.log('WebSocket-Verbindung geöffnet.');
-    // Den Namen des Clients abfragen
-    clientName = prompt('Bitte gib deinen Namen ein:'); // Den Namen speichern
-    sendMessage('Hallo, ich bin verbunden!'); // Nachricht senden
+
+    // Name über das Overlay abfragen
+    document.getElementById('submitNameButton').addEventListener('click', () => {
+        const nameInput = document.getElementById('nameInput').value.trim();
+        if (nameInput) {
+            clientName = nameInput; // Speichere den Namen
+            document.getElementById('nameOverlay').style.display = 'none'; // Verstecke Overlay
+        } else {
+            alert('Bitte gib einen Namen ein!');
+        }
+    });
 });
+
+
 
 // Nachricht vom Server empfangen
 socket.addEventListener('message', (event) => {
@@ -42,10 +52,6 @@ function displayMessage(name, text) {
 
     chatWindow.appendChild(messageElement);
 }
-
-
-
-
 
 
 // Verbindung geschlossen
