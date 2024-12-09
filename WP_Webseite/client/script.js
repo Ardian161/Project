@@ -30,6 +30,9 @@ socket.addEventListener('message', (event) => {
     } catch (error) {
         console.error('Fehler beim Verarbeiten der Nachricht:', error.message, event.data);
     }
+    // Nach dem Empfangen der Nachricht sicherstellen, dass zum neuesten Eintrag gescrollt wird
+    const chatWindow = document.getElementById('chatWindow');
+    chatWindow.scrollTop = chatWindow.scrollHeight;
 });
 
 // Funktion zum Anzeigen der Nachricht im Chat-Fenster
@@ -48,6 +51,9 @@ function displayMessage(name, text) {
     }
 
     chatWindow.appendChild(messageElement);
+
+        // Scrollen zum neuesten Nachrichten-Element
+        chatWindow.scrollTop = chatWindow.scrollHeight;
 }
 
 
