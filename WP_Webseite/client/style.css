@@ -10,17 +10,32 @@ body {
 
 /* Container für das Chat-Fenster */
 #chatContainer {
-    width: 800px;
-    height: 500px;
+    width: 80%;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     border: 1px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
+    position: relative;
 }
+
+#topBar {
+    background-color: #6a5acd; /* Lila Farbe */
+    height: 50px;  /* Höhe der Topbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+
 
 /* Das Chat-Fenster, in dem die Nachrichten angezeigt werden */
 #chatWindow {
+    height: 100%;
     flex-grow: 1;
     padding: 10px;
     overflow-y: auto; 
