@@ -13,10 +13,10 @@ app.use(express.static('client')); // Statische Dateien (HTML, CSS, JS)
 
 // Verbindung zur MySQL-Datenbank herstellen
 const db = mysql.createConnection({
-    host: 'localhost', // Der Hostname des MySQL-Servers (normalerweise localhost)
-    user: 'root', // Dein MySQL-Benutzername
-    password: '1234', // Dein MySQL-Passwort
-    database: 'chat_app_db' // Name der Datenbank
+    host: 'localhost', 
+    user: 'root', 
+    password: '1234', 
+    database: 'chat_app_db' 
 });
 
 // Mit der Datenbank verbinden
@@ -35,14 +35,14 @@ wss.on('connection', (ws) => {
     console.log('Ein Client hat sich verbunden.');
 
     // Alle Nachrichten aus der Datenbank abrufen und an den Client senden
-    const query = 'SELECT name, message FROM messages ORDER BY id ASC';  // Sortiere nach ID, um die Reihenfolge der Nachrichten zu bewahren
+    const query = 'SELECT name, message FROM messages ORDER BY id ASC';  // Sortiere nach ID für Reihenfolge der Nachrichten
     db.query(query, (err, results) => {
         if (err) {
             console.error('Fehler beim Abrufen der Nachrichten:', err);
             return;
         }
 
-        // Sende die Nachrichten an den Client
+        // Nachrichten an den Client senden
         results.forEach((row) => {
             ws.send(JSON.stringify({ name: row.name, text: row.message }));
         });
@@ -125,13 +125,10 @@ ws.on('message', (message) => {
         console.error('Fehler beim Verarbeiten der Nachricht:', error.message);
     }
 });
-
-
     ws.on('close', () => {
         console.log('Ein Client hat die Verbindung geschlossen.');
     });
 });
-
 server.listen(port, () => {
     console.log(`Server läuft auf http://localhost:${port}`);
 });

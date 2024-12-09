@@ -1,10 +1,10 @@
 const mysql = require('mysql2');
 
 const connection = mysql.createConnection({
-  host: 'localhost',       // Dein MySQL-Server (meistens localhost)
-  user: 'root',            // Dein MySQL-Benutzername
-  password: '1234',            // Dein MySQL-Passwort
-  database: 'chat_app_db'  // Der Name deiner Datenbank
+  host: 'localhost',       
+  user: 'root',            
+  password: '1234',         
+  database: 'chat_app_db' 
 });
 
 connection.connect((err) => {

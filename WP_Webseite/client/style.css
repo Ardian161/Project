@@ -22,7 +22,7 @@ body {
 
 #topBar {
     background-color: #3f66bb; 
-    height: 50px;  /* Höhe der Topbar */
+    height: 50px;  
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,7 +30,6 @@ body {
     font-weight: bold;
     padding: 10px;
 }
-
 
 /* Das Chat-Fenster, in dem die Nachrichten angezeigt werden */
 #chatWindow {
@@ -41,7 +40,7 @@ body {
     border-bottom: 1px solid #ddd;
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* Hier ändern: Nachrichten nach rechts ausrichten */
+    align-items: flex-end; /*generell rechts orientierter Chat*/
 }
 
 
@@ -60,12 +59,9 @@ body {
 
 /* Nachrichten von anderen nach links ausrichten */
 #chatWindow .other {
-    background-color: #3f85e0;  /* Hellerer Hintergrund für Nachrichten von anderen */
-    align-self: flex-start;      /* Nachricht nach links verschieben */
-    text-align: left;            /* Text nach links ausrichten */
-}
-
-#chatWindow .self { 
+    background-color: #3f85e0;  
+    align-self: flex-start;      
+    text-align: left;            
 }
 
 /* Container für das Eingabefeld und den Button */
@@ -94,7 +90,7 @@ body {
     cursor: pointer;
 }
 
-/* Stil für den Hover-Effekt des Buttons */
+/* Hover-Effekt des Buttons */
 #sendMessageButton:hover {
     background-color: #283096;
 }

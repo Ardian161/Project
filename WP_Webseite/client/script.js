@@ -19,8 +19,6 @@ socket.addEventListener('open', () => {
     });
 });
 
-
-
 // Nachricht vom Server empfangen
 socket.addEventListener('message', (event) => {
     try {
@@ -41,7 +39,7 @@ function displayMessage(name, text) {
     const messageElement = document.createElement('div');
     messageElement.textContent = `${name}: ${text}`;
 
-    // Überprüfe, ob die Nachricht vom Client selbst kommt
+    // Überprüfen, ob die Nachricht vom Client selbst kommt
     if (name === clientName) {
         messageElement.classList.add('self'); // Eigene Nachricht nach rechts verschieben
         console.log("Eigene Nachricht erkannt!"); // Debugging
@@ -49,13 +47,10 @@ function displayMessage(name, text) {
         messageElement.classList.add('other'); // Nachrichten von anderen nach links verschieben
         console.log("Nachricht von anderen erkannt!"); // Debugging
     }
-
     chatWindow.appendChild(messageElement);
-
         // Scrollen zum neuesten Nachrichten-Element
         chatWindow.scrollTop = chatWindow.scrollHeight;
 }
-
 
 // Verbindung geschlossen
 socket.addEventListener('close', () => {
@@ -83,9 +78,9 @@ function sendMessage(message) {
         const messageInput = document.getElementById('messageInput');
         messageInput.value = ''; // Eingabefeld leeren
         messageInput.focus(); // Fokus auf das Eingabefeld setzen
+        chatWindow.scrollTop = chatWindow.scrollHeight;
     }
 }
-
 
 // Event-Listener für den Send-Button
 document.getElementById('sendMessageButton').addEventListener('click', () => {

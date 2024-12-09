@@ -1,49 +1,14 @@
-<!-- Vor Rausnehmen von Overlay aus Chat-Container
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat-App</title>
-    <link rel="icon" href="icon.png"> 
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.png"> 
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-    <div id="chatContainer">
-        <div id="nameOverlay">
-            <div id="namePrompt">
-                <h2>Willkommen!</h2>
-                <p>Bitte gib deinen Namen ein, um am Chat teilzunehmen:</p>
-                <input type="text" id="nameInput" placeholder="Dein Name">
-                <button id="submitNameButton">Start</button>
-            </div>
-        </div>
-
-        <div id="chatWindow"></div>
-        <div id="inputContainer">
-            <input type="text" id="messageInput" placeholder="Nachricht eingeben..." />
-            <button id="sendMessageButton">Senden</button>
-        </div>
-    </div>
-    <script src="script.js"></script> 
-</body>
-</html> -->
-
-
-
-
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat-App</title>
-    <link rel="icon" href="favicon.png"> <!-- Favicon -->
-    <link rel="stylesheet" href="style.css"> <!-- Dein CSS-Stylesheet -->
-</head>
-<body>
-
-    <!-- Overlay für Namenseingabe bleibt außerhalb des Containers -->
+    <!-- Overlay für Namenseingabe -->
     <div id="nameOverlay">
         <div id="namePrompt">
             <h2>Willkommen!</h2>
@@ -52,22 +17,17 @@
             <button id="submitNameButton">Start</button>
         </div>
     </div>
-
     <div id="chatContainer">
-
         <!-- Top Bar im Container -->
         <div id="topBar">
             <span>iChat</span>
         </div>
-
         <div id="chatWindow"></div>
-
         <div id="inputContainer">
             <input type="text" id="messageInput" placeholder="Nachricht eingeben..." />
             <button id="sendMessageButton">Senden</button>
         </div>
     </div>
-
     <script src="script.js"></script> 
 </body>
 </html>
