@@ -32,9 +32,6 @@ socket.addEventListener('message', (event) => {
     }
 });
 
-
-// Funktion zum Anzeigen der Nachricht im Chat-Fenster
-// Funktion zum Anzeigen der Nachricht im Chat-Fenster
 // Funktion zum Anzeigen der Nachricht im Chat-Fenster
 function displayMessage(name, text) {
     const chatWindow = document.getElementById('chatWindow');
