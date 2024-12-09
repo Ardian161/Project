@@ -134,7 +134,7 @@ const wss = new WebSocket.Server({ server }); // WebSocket-Server auf demselben 
 wss.on('connection', (ws) => {
     console.log('Ein Client hat sich verbunden.');
 
-    ws.send(JSON.stringify({ name: "Server", text: "Willkommen im Chat!" }));
+    ws.send(JSON.stringify({ name: "iChat-Team", text: "Willkommen im Chat!" }));
 
     // Nachricht vom Client empfangen
     ws.on('message', (message) => {

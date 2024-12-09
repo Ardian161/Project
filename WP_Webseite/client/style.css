@@ -21,7 +21,7 @@ body {
 }
 
 #topBar {
-    background-color: #6a5acd; /* Lila Farbe */
+    background-color: #3f66bb; 
     height: 50px;  /* Höhe der Topbar */
     display: flex;
     justify-content: center;
@@ -55,7 +55,8 @@ body {
     word-wrap: break-word;
     display: inline-block;
     box-sizing: border-box;
-    background-color: rgb(145, 190, 241);
+    background-color: rgb(90, 158, 235);
+    color: white;
 }
 
 /* Nachrichten von anderen nach links ausrichten */
